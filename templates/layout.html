@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+
+        <!-- https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meta -->
+        <meta charset="utf-8"/>
+        <meta content="initial-scale=1, width=device-width" name="viewport"/>
+
+        <!-- documentation at http://getbootstrap.com/, alternative themes at https://www.bootstrapcdn.com/bootswatch/ -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+
+        <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet"/>
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+        <!-- http://1000hz.github.io/bootstrap-validator/ -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
+		
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <!--<link rel="stylesheet" href="/resources/demos/style.css"> -->
+        <!--INSERTADO POR JAVIER: OTROS ESTILOS SACADOS DE INTERNET-->
+        <!--<link rel="stylesheet" href="https://www.w3schools.com/lib/w3.css">        -->
+        <!--INTERFIERE CON LOS OTROS ESTILOS DEL CS50-->
+        <!--*********PENDIENTE DEFINIR MIS PROPIOS ESTILOS-->
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+        <title>Cyber2223 Pedidos: {% block title %}{% endblock %}</title>
+
+    </head>
+    <body>
+    <!--<body background = "\static\dark_vader.jpg" style="background-repeat: no-repeat;background-size:100% 100%;">-->
+		<script src="{{ url_for('static', filename='webforms.js') }}"></script>
+		<!--<script src="/static/webforms.js"></script>-->
+        <div class="container">
+
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button aria-expanded="false" class="navbar-toggle collapsed" data-target="#navbar" data-toggle="collapse" type="button">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="{{ url_for('index') }}"><span class="blue">C</span><span class="red">y</span><span class="yellow">2</span><span class="green">3</span> <span class="red">Cyber2223</span></a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="navbar">
+                        {% if session.user_id %}
+                            <ul class="nav navbar-nav">
+                                <li><a href="{{ url_for('index') }}">Inicio</a></li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pedidos
+                                    <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="{{ url_for('cliente') }}">Grabar nuevo cliente</a></li>
+                                        <li><a href="{{ url_for('pedido') }}">Grabar nuevo pedido</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Artículos
+                                    <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="{{ url_for('articulo') }}">Grabar nuevo artículo</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Consultas
+                                    <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="{{ url_for('articulos') }}">Consulta artículos</a></li>
+<!--                                        <li><a href="{{ url_for('consultapaquetes') }}">Consulta paquetes</a></li>-->
+                                    </ul>
+                                </li>
+
+
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="{{ url_for('cambiarpwd') }}">Cambiar PWD</a></li>
+                                <li><a href="{{ url_for('logout') }}">Desconectar</a></li>
+                            </ul>
+                        {% else %}
+                            <ul class="nav navbar-nav navbar-right">
+ <!--                               <li><a href="{{ url_for('register') }}">Register</a></li> -->
+                                <li><a href="{{ url_for('logout') }}">Conectar</a></li>
+                            </ul>
+                        {% endif %}
+                    </div>
+                </div>
+            </nav>
+
+            {% if get_flashed_messages() %}
+                <header>
+                    <div class="alert alert-info" role="alert">
+                        {{ get_flashed_messages() | join(" ") }}
+                    </div>
+                </header>
+            {% endif %}
+
+            <main>
+                {% block main %}{% endblock %}
+            </main>
+
+        </div>
+
+    </body>
+
+</html>

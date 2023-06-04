@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS pedidos ( id INTEGER auto_increment, idcliente INTEGER,  fchpedido TEXT,  fchprevent TEXT,  estado INTEGER DEFAULT 1, vendedor INTEGER, PRIMARY KEY(id) );
+CREATE TABLE IF NOT EXISTS lineaspedido (id INTEGER auto_increment,idpedido INTEGER,idarticulo INTEGER,descripcion TEXT,piezas INTEGER,fchprevent TEXT,	fchent TEXT,estado INTEGER,PRIMARY KEY(id));
+CREATE TABLE IF NOT EXISTS articulos ( id INTEGER auto_increment,  codigo TEXT,  descripcion TEXT, estado INTEGER, PRIMARY KEY(id));
+CREATE TABLE IF NOT EXISTS clientes (id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL, CIF TEXT NOT NULL, nombrefiscal TEXT NOT NULL, nombrecomercial TEXT NOT NULL,direccion TEXT,cp INTEGER,provincia TEXT,pais TEXT NOT NULL DEFAULT 'España');
+CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY AUTO_INCREMENT NOT NULL, username TEXT NOT NULL, hash TEXT NOT NULL, cash NUMERIC NOT NULL DEFAULT 10000.00 );

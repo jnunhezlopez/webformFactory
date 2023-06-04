@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form action="{{ url_for('articulo') }}" data-toggle="validator" id="registration" method="post">
+    <!--<form action="/alumno" data-toggle="validator" id="registration" method="post">-->
+        <div class="container">
+            <div class="form-group">
+                {% if grabar %}
+                {% if nuevo %}
+                <input autocomplete="off" autofocus class="form-control" id="id" name="id" placeholder="Id de artículo" type="hidden"/>
+                {% endif %}
+                {% else %}
+                <input autocomplete="off" autofocus class="form-control" id="id" name="id" placeholder="Id de artículo" type="text"/>
+                <button class="btn btn-default" type="submit" name="action" value="cargar" >Carga Artículo
+                <span class="glyphicon glyphicon-file" aria-hidden="true"></span>
+                </button>
+                <button class="btn btn-default" type="submit" name="action" value="nuevo" >Nuevo Artículo
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                </button>
+                {% endif %}
+            </div>
+            {% if grabar %}
+            {% if nuevo %}
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" id="codigo" name="codigo" placeholder="Código" required type="text"/>
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" class="form-control" id="descripcion" name="descripcion" placeholder="Descripción" required type="text"/>
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="estado" placeholder="Estado: " type="text"/>
+            </div>
+            {% else %}
+            {% for registro in registros %}
+            <div class="form-group"></div>
+                <input autocomplete="off" autofocus class="form-control" id="id" name="id" value="{{registro.id}}" required type="text"/>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" id="codigo" name="codigo" value="{{registro.codigo}}" required type="text"/>
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" class="form-control" id="descripcion" name="descripcion" value="{{registro.descripcion}}" required type="text"/>
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="estado" value="{{registro.estado}}" type="text"/>
+            </div>
+            {% endfor %}
+            {% endif %}
+            <div class="form-group">
+                <button class="btn btn-default" type="submit" name="action" value="grabar">Grabar artículo</button>
+            </div>
+            {% endif %}
+        </div>
+    </form>
+{% endblock %}

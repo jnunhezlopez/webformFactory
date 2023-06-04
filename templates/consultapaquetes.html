@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Consulta de Paquetes
+{% endblock %}
+
+{% block main %}
+    <form action="{{ url_for('consultapaquetes') }}" data-toggle="validator" method="post">
+	    <div class="panel Panel_with_Padding">
+	
+	    <!-- <script type="text/javascript" src="/webforms.paquetes.js"></script> -->
+        <!-- <p style="color:white" align = "left">Fecha:* <input style = "color:black" required type="text" id="datepicker" name="fecha" autocomplete = "off"> -->
+	        <label>Artículo*<input class="form-control" name="texto" id="texto" required type="text"/></label>
+	        <label>Estado*<input class="form-control" name="estado" id="estado" required type="text"/></label>
+	        <!-- <label>Evaluacion*<input class="form-control" name="idevaluacion" id="idevaluacion" required type="text"/></label> -->
+	        <br><p style="color:white" align = "left">Los campos marcados con * son obligatorios.</p>
+	        <!--<input type="submit" value="Cargar datos"/>-->
+	        <input type="button" onclick="cargapaquetes(); return false;" value="Cargar datos">
+	    </div>
+    	<!--<body>-->
+    	<table id="myTable">
+          <!--esta tabla se rellena con los resultados de la consulta desde javascript-->
+    	</table> 	
+	    <!-- </body> -->
+   </form>
+    <form action="" method="post">
+        <div class="form-group">    
+<!--		    <input type="button" onclick="creapedido(); return false;" value="Crear pedido"> -->
+			<input type="button" id="pedido" value="Crear pedido">
+				<script src="{{ url_for('static', filename='consultapaquetes.js') }}"></script>
+		</div>
+	</form>
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form action="{{ url_for('pedido') }}" data-toggle="validator" id="registration" method="post">
+    <!--<form action="/alumno" data-toggle="validator" id="registration" method="post">-->
+        <script>
+        $( function() {
+            $( "#fchpedido" ).datepicker({
+                firstDay: 1,
+                dateFormat: "dd/mm/yy",
+            }).datepicker("setDate", 'now');
+            $( "#fchprevent" ).datepicker({
+                firstDay: 1,
+                dateFormat: "dd/mm/yy"
+            });            
+        } );
+        </script>
+        <div class="container">
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" id="id" name="id" placeholder="Id de pedido:" type="hidden"/>
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+                <!--<input autocomplete="off" autofocus class="form-control" id="idcliente" name="idcliente" placeholder="Id de cliente:" required type="text"/>-->
+                <select class="form-control" id="idcliente" name="idcliente">
+                    {% for registro in registros %}
+                    <option value="{{registro.id}}">{{registro.nombrecomercial}}</option>
+                    {% endfor %}
+                </select>
+                <input autocomplete="off" class="form-control" id="fchpedido" name="fchpedido" placeholder="Fecha de pedido:" required type="text"/>
+                <input autocomplete="off" class="form-control" id="fchprevent" name="fchprevent" placeholder="Fecha prevista entrega: " type="text"/>
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="estado" value="1" placeholder="Estado: " type="hidden"/>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-default" type="submit" name="action" value="grabar">Grabar pedido</button>
+                <!--<button class="btn btn-default" type="submit" name="action" value="modificar">Añadir Línea</button>-->
+            </div>
+        </div>
+    </form>
+{% endblock %}

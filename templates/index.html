@@ -1,0 +1,68 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    registros
+{% endblock %}
+
+{% block main %}
+    <style>
+    table {
+        border: 2px solid black;
+    }
+    th {
+        padding: 15px;
+        border: 2px solid black;
+    }
+    td {
+        padding: 15px;
+        border: 1px solid black;
+    }
+    </style>
+    {% if registros!=[] or resumen!=[] %}
+    <panel>
+         <label>Datos de pedidos pendientes de servir</label> 
+    </panel> 
+    {% else %}
+        <label class="text-warning"><h1>No hay pedidos guardados pendientes de servir</h1></label>
+    {% endif %}
+    {% if registros!=[] %}
+    <br/>
+    <form action="{{ url_for('index') }}" method="post">
+    <table>
+        <tr><th>NºPedido</th><th>Cliente</th><th>Fecha</th><th>Fecha ent.</th><th>Estado</th><th></th><th></th><th></th></tr>
+        {% for registro in registros %}
+        <tr>
+            <td>{{registro.id}}</td><td>{{registro.idcliente}}</td>
+            <td>{{registro.fchpedido}}</td>
+            <td>{{registro.fchprevent}}</td>
+            <td>{{registro.estado}}</td>
+            <td><button class="btn btn-default" type="submit" name="action" value="m{{registro.id}}">Modificar
+            <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+            </button></td>
+            <td><button class="btn btn-default" type="submit" name="action" value="c{{registro.id}}">Confirmar
+            <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+            </button></td>
+            <td><button class="btn btn-default" type="submit" name="action" value="e{{registro.id}}">Eliminar
+            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+            </button></td>
+        </tr>
+        {% endfor %}
+    </table>
+    </form>
+    {% endif %}
+    {% if resumen!=[] %} <!--de momento el resumen hace lo mismo que sin resumen-->
+    <br/>
+    <table>
+        <tr><th>id</th><th>cliente</th><th>Fecha</th><th>B.Imp.</th><th>Iva</th><th>Importe</th><th>Fecha ent.</th><th></th><th></th></tr>
+        {% for registro in registros %}
+        <tr>
+            <td>{{registro.id}}</td><td>{{registro.idcliente}}</td>
+            <td>{{registro.fchpedido}}</td>
+            <td>{{registro.fchprevent}}</td>
+            <td><button class="btn btn-default" type="submit" name="action" value="m{{registro.id}}">Modificar</button></td>
+            <td><button class="btn btn-default" type="submit" name="action" value="e{{registro.id}}">Eliminar</button></td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Log In
+{% endblock %}
+
+{% block main %}
+    <form action="{{ url_for('cliente') }}" data-toggle="validator" id="registration" method="post">
+    <!--<form action="/alumno" data-toggle="validator" id="registration" method="post">-->
+        <div class="container">
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" id="id" name="id" placeholder="Id de cliente" type="hidden"/>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" autofocus class="form-control" id="cif" name="cif" placeholder="CIF" required type="text"/>
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" class="form-control" id="nombrefiscal" name="nombrefiscal" placeholder="Nombre Fiscal" required type="text"/>
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" class="form-control" id="nombrecomercial" name="nombrecomercial" placeholder="Nombre Comercial" required type="text"/>
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+                <input autocomplete="off" class="form-control" id="direccion" name="direccion" placeholder="Dirección" required type="text"/>
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+                <input class="form-control" id="cp" name="cp" placeholder="Código Postal" required type="text"/>
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+                <input class="form-control" id="provincia" name="provincia" placeholder="Provincia" required type="text"/>
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+                <input class="form-control" id="pais" name="pais" placeholder="País" required type="text"/>
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-default" type="submit">Grabar cliente</button>
+            </div>
+        </div>
+    </form>
+{% endblock %}
