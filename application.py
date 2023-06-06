@@ -34,8 +34,8 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
 # configure CS50 Library to use SQLite database
-#db = SQL("sqlite:///pedidosweb.db")
-db=SQL("mysql://javier:javier@localhost/pedidosweb")
+db = SQL("sqlite:///pedidosweb.db")
+#db=SQL("mysql://javier:javier@localhost/pedidosweb")
 #variables globales clientes y artículos
 global gclientes
 gclientes = db.execute("SELECT * FROM clientes")

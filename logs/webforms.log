@@ -5307,3 +5307,100 @@ RuntimeError: table pedidos has no column named baseimponible
 2023-06-04 06:15:55,786 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
 2023-06-04 06:16:00,456 registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
 2023-06-04 06:16:00,456 registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+2023-06-05 02:43:08,650 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-05 02:43:08,651 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-05 02:43:08,651 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-05 02:43:09,504 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-05 02:43:09,504 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-05 02:43:09,504 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-05 02:43:13,727 registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+2023-06-05 02:43:13,727 registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+2023-06-05 02:53:12,523 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-05 02:53:12,527 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-05 02:53:12,528 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-05 02:53:12,839 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-05 02:53:12,839 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-05 02:53:12,839 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-05 02:53:17,700 registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+2023-06-05 02:53:17,700 registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+2023-06-06 02:42:01,077 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-06 02:42:01,082 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-06 02:42:01,082 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-06 02:53:10,722 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-06 02:53:10,722 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-06 02:53:10,722 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-06 02:53:17,603 registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+2023-06-06 02:53:17,603 registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+2023-06-06 02:53:35,861 Exception on / [POST]
+Traceback (most recent call last):
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/var/www/html/webforms/helpers.py", line 31, in decorated_function
+    return f(*args, **kwargs)
+  File "/var/www/html/webforms/application.py", line 67, in index
+    db.execute(sql)
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/cs50/sql.py", line 29, in decorator
+    return f(*args, **kwargs)
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/cs50/sql.py", line 409, in execute
+    raise e
+RuntimeError: attempt to write a readonly database
+2023-06-06 02:53:46,182 Exception on / [POST]
+Traceback (most recent call last):
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/var/www/html/webforms/helpers.py", line 31, in decorated_function
+    return f(*args, **kwargs)
+  File "/var/www/html/webforms/application.py", line 67, in index
+    db.execute(sql)
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/cs50/sql.py", line 29, in decorator
+    return f(*args, **kwargs)
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/cs50/sql.py", line 409, in execute
+    raise e
+RuntimeError: attempt to write a readonly database
+2023-06-06 02:54:42,648 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-06 02:54:42,648 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-06 02:54:42,648 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-06 02:54:42,957 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-06 02:54:42,957 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-06 02:54:42,957 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-06 02:54:47,879 registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+2023-06-06 02:54:47,879 registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+2023-06-06 02:54:52,063 Exception on / [POST]
+Traceback (most recent call last):
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/var/www/html/webforms/helpers.py", line 31, in decorated_function
+    return f(*args, **kwargs)
+  File "/var/www/html/webforms/application.py", line 67, in index
+    db.execute(sql)
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/cs50/sql.py", line 29, in decorator
+    return f(*args, **kwargs)
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/cs50/sql.py", line 409, in execute
+    raise e
+RuntimeError: attempt to write a readonly database
+2023-06-06 03:29:44,202 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-06 03:29:44,202 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-06 03:29:44,202 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-06 03:29:44,527 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-06 03:29:44,527 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-06 03:29:44,527 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-06 03:29:48,428 registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+2023-06-06 03:29:48,428 registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>

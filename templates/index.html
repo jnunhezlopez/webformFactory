@@ -1,3 +1,4 @@
+<meta http-equiv="refresh" content="30">
 {% extends "layout.html" %}
 
 {% block title %}
@@ -36,12 +37,16 @@
             <td>{{registro.fchpedido}}</td>
             <td>{{registro.fchprevent}}</td>
             <td>{{registro.estado}}</td>
+            {% if registro.estado<3 %}
             <td><button class="btn btn-default" type="submit" name="action" value="m{{registro.id}}">Modificar
             <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
             </button></td>
             <td><button class="btn btn-default" type="submit" name="action" value="c{{registro.id}}">Confirmar
             <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
             </button></td>
+            {% else%}
+            <td></td><td></td>
+            {% endif %}
             <td><button class="btn btn-default" type="submit" name="action" value="e{{registro.id}}">Eliminar
             <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
             </button></td>
