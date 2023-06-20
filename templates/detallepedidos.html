@@ -58,7 +58,7 @@
         </div>
         <div class = "col-md-6">
             {% if pedidos!=[] %}
-            <table class="table table-condensed table-striped">
+            <table class="table table-condensed table-striped" id="tbpedidos">
                 <thead>
                     <tr><th></th></th><th>NºPedido</th><th>Cliente</th><th>Fecha</th><th>Fecha ent.</th><th>Estado</th><th>Descripción</th><th>Pz</th></tr>
                 </thead>
@@ -67,8 +67,7 @@
                     {% for pedido in pedidos %}
 <!--                        {% if pedido.id != nuevopedido %}-->
                         <tr data-toggle="collapse" data-target="#{{pedido.id}}" class="accordion-toggle">
-<!--                            <td><button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-plus"></span></button></td>-->
-                            <td></td>
+                            <td><button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-plus"></span></button></td>
                             <td>{{pedido.id}}</td><td>{{pedido.idcliente}}</td>
                             <td>{{pedido.fchpedido}}</td>
                             <td>{{pedido.fchprevent}}</td>
@@ -129,6 +128,21 @@
                     }
                 }
             }
+        });
+        const tbody = document.querySelector('#tbpedidos tbody');
+        tbody.addEventListener('click', function (e) {
+            const cell = e.target.closest('td');
+            if (!cell) {return;}
+            const row = cell.parentElement;
+            alert(cell.innerHTML);
+            var url = '/cargalineaspedido';
+            var idpedido = cell.innerHTML;
+		    $.post(url, {idpedido: idpedido}, function(data) {
+			//alert("aquí");
+			for (var key in data){
+				alert(key + '-' + data[key]);
+			}
+            });
         });
     </script>
 {% endblock %}

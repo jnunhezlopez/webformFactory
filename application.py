@@ -40,7 +40,7 @@ db = SQL("sqlite:///pedidosweb.db")
 global gclientes
 gclientes = db.execute("SELECT * FROM clientes")
 global garticulos
-garticulos = db.execute("SELECT * FROM articulos")
+garticulos = db.execute("SELECT * FROM articulos WHERE estado <2")
 
 @app.route("/", methods=["GET", "POST"])
 @login_required
@@ -420,5 +420,15 @@ def detallepedidos():
                     WHERE pedidos.idcliente = clientes.id and pedidos.id=lineaspedido.idpedido and vendedor = :vendedor and idcliente=:idcliente",
                               vendedor=session["user_id"], idcliente=idcliente)
             return render_template("detallepedidos.html",  registros=gclientes, pedidos=pedidos, resumen=nombrecliente, datos=datos, columnas=columnas)
+@app.route("/cargalineaspedido", methods=["GET", "POST"])
+@login_required
+def cargalineaspedido():
+    if request.method == "POST":
+        app.logger.info(request.form.get("idpedido"))
+        idpedido = request.form.get("idpedido")
+        rows=db.execute ("SELECT descripcion,piezas FROM lineaspedido WHERE idpedido=:idpedido", idpedido = idpedido)
+        return jsonify(rows)
+    else:
+        apology("No hay método GET")
 if __name__ ==  '__main__':
     app.run()
