@@ -60,42 +60,40 @@
             {% if pedidos!=[] %}
             <table class="table table-condensed table-striped" id="tbpedidos">
                 <thead>
-                    <tr><th></th></th><th>NºPedido</th><th>Cliente</th><th>Fecha</th><th>Fecha ent.</th><th>Estado</th><th>Descripción</th><th>Pz</th></tr>
+                    <tr><th>NºPedido</th><th>Cliente</th><th>Fecha</th><th>Fecha ent.</th><th>Estado</th></tr>
                 </thead>
                 <tbody>
 <!--                    {% set nuevopedido= 0 %}-->
                     {% for pedido in pedidos %}
 <!--                        {% if pedido.id != nuevopedido %}-->
-                        <tr data-toggle="collapse" data-target="#{{pedido.id}}" class="accordion-toggle">
-                            <td><button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-plus"></span></button></td>
+                        <tr data-toggle="collapse" data-target="#r{{pedido.id}}" class="accordion-toggle">
+<!--                            <td><button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-plus"></span></button></td>-->
                             <td>{{pedido.id}}</td><td>{{pedido.idcliente}}</td>
                             <td>{{pedido.fchpedido}}</td>
                             <td>{{pedido.fchprevent}}</td>
                             <td>{{pedido.estado}}</td>
-                            <td>{{pedido.descripcion}}</td>
-                            <td>{{pedido.piezas}}</td>
                         </tr>
 <!--                        {% set nuevopedido = pedido.id %}-->
 <!--                        {% endif %}-->
-  <!--                      <tr>
+                        <tr>
                             <td colspan="12" class = "hiddenRow">
-                                <div class="accordian-body collapse" id="{{pedido.id}}">
+                                <div class="accordian-body collapse" id="r{{pedido.id}}">
                                     <table class = "table table-striped">
                                         <thead>
                                         <tr class="info">
                                             <th>Descripción</th><th>Piezas</th>
                                         </tr>
                                         </thead>
-                                        <tbody>
-                                        <tr>
-                                            <td>{{pedido.descripcion}}</td>
-                                            <td>{{pedido.piezas}}</td>
-                                        </tr>
+                                        <tbody id="{{pedido.id}}">
+<!--                                        <tr id="{{pedido.id}}">-->
+<!--                                            <td>{{pedido.descripcion}}</td>-->
+<!--                                            <td>{{pedido.piezas}}</td>-->
+<!--                                        </tr>-->
                                         </tbody>
                                     </table>
                                 </div>
                             </td>
-                        </tr>-->
+                        </tr>
                     {% endfor %}
                 </tbody>
             </table>
@@ -134,13 +132,30 @@
             const cell = e.target.closest('td');
             if (!cell) {return;}
             const row = cell.parentElement;
-            alert(cell.innerHTML);
+            //alert(cell.innerHTML);
             var url = '/cargalineaspedido';
             var idpedido = cell.innerHTML;
+            var x = document.getElementById(idpedido);
+            //truco para borrar la tabla por si se pulsa el botón varias veces
+            x.innerHTML = "";
 		    $.post(url, {idpedido: idpedido}, function(data) {
 			//alert("aquí");
 			for (var key in data){
-				alert(key + '-' + data[key]);
+				//alert(key + '-' + data[key]);
+                var y = document.createElement("TR");
+                var cadena1 = "id";
+                var cadena2 = String(data[key].id);
+                // ********IMPORTANTE******* se guarda el id de líneapedido como el id de TR
+                y.setAttribute(cadena1, cadena2);
+                //en el código arriba se identificó el tbody con el idpedido
+                document.getElementById(idpedido).appendChild(y);
+                var campos = ['descripcion','piezas'];
+                for (const campo of campos){
+                    var z = document.createElement("TD");
+                    var t = document.createTextNode(data[key][campo]);
+                    z.appendChild(t);
+                    document.getElementById(cadena2).appendChild(z);
+                }
 			}
             });
         });

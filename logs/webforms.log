@@ -6391,3 +6391,217 @@ RuntimeError: ambiguous column name: fchprevent
 2023-06-20 07:22:35,323 registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
 2023-06-20 07:22:35,323 registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
 2023-06-20 07:22:42,418 13
+2023-06-20 10:21:06,477 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-20 10:21:06,477 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-20 10:21:06,477 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-20 10:21:07,016 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-20 10:21:07,016 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-20 10:21:07,016 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-20 10:21:12,063 registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+2023-06-20 10:21:12,063 registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+2023-06-20 10:21:23,815 13
+2023-06-20 10:27:22,886 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-20 10:27:22,886 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-20 10:27:22,886 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-20 10:27:27,806 registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+2023-06-20 10:27:27,806 registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+2023-06-20 10:27:43,559 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-20 10:27:43,559 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-20 10:27:43,559 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-20 10:28:15,145 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-20 10:28:15,145 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-20 10:28:15,146 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-20 10:28:15,542 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-20 10:28:15,542 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-20 10:28:15,542 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-20 10:28:18,866 registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+2023-06-20 10:28:18,866 registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+2023-06-20 10:28:30,411 <button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-plus"></span></button>
+2023-06-20 10:28:53,261 13
+2023-06-20 10:29:00,310 <button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-plus"></span></button>
+2023-06-20 10:32:33,387 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-20 10:32:33,387 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-20 10:32:33,387 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-20 10:32:33,786 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-20 10:32:33,786 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-20 10:32:33,786 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-20 10:32:37,341 registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+2023-06-20 10:32:37,341 registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+2023-06-20 10:32:47,296 <button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-plus"></span></button>
+2023-06-20 10:32:51,975 <button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-plus"></span></button>
+2023-06-20 10:41:30,591 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-20 10:41:30,591 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-20 10:41:30,591 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-20 10:41:30,984 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-20 10:41:30,984 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-20 10:41:30,984 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-20 10:41:34,330 registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+2023-06-20 10:41:34,330 registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+2023-06-20 10:43:15,868 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-20 10:43:15,869 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-20 10:43:15,869 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-20 10:43:22,842 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-20 10:43:22,843 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-20 10:43:22,843 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-20 10:43:23,050 registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+2023-06-20 10:43:23,050 registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+2023-06-20 10:43:30,231 13
+2023-06-20 10:51:51,006 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-20 10:51:51,006 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-20 10:51:51,006 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-20 10:51:51,414 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-20 10:51:51,414 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-20 10:51:51,414 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-20 10:51:55,293 registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+2023-06-20 10:51:55,293 registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+2023-06-20 10:52:03,892 13
+2023-06-20 10:52:08,970 16
+2023-06-20 10:53:35,509 13
+2023-06-20 10:53:38,226 16
+2023-06-20 10:57:32,765 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-20 10:57:32,765 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-20 10:57:32,765 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-20 10:57:33,197 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-20 10:57:33,197 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-20 10:57:33,198 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-20 10:57:36,696 registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+2023-06-20 10:57:36,696 registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+2023-06-20 10:57:44,155 13
+2023-06-20 10:57:50,994 16
+2023-06-20 10:57:57,928 
+                                <div class="accordian-body collapse in" id="r16" aria-expanded="true" style="">
+                                    <table class="table table-striped">
+                                        <thead>
+                                        <tr class="info">
+                                            <th>Descripci\xf3n</th><th>Piezas</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr id="16">
+<!--                                            <td></td>-->
+<!--                                            <td></td>-->
+                                        <tr id="undefined"></tr><tr id="undefined"></tr></tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            
+2023-06-20 10:58:01,119 16
+2023-06-20 10:58:03,296 13
+2023-06-20 10:58:05,912 16
+2023-06-20 10:58:09,956 16
+2023-06-20 10:58:12,136 13
+2023-06-20 10:59:26,223 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-20 10:59:26,224 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-20 10:59:26,224 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-20 10:59:26,655 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-20 10:59:26,655 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-20 10:59:26,655 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-20 10:59:32,060 registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+2023-06-20 10:59:32,060 registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+2023-06-20 10:59:39,980 13
+2023-06-20 10:59:47,989 16
+2023-06-20 10:59:53,511 16
+2023-06-20 10:59:57,663 13
+2023-06-20 11:00:05,693 16
+2023-06-20 11:00:10,567 Cliente 1
+2023-06-20 11:00:28,621 13
+2023-06-20 11:00:48,795 13
+2023-06-20 11:00:50,965 13
+2023-06-20 11:00:54,781 Green Raw Material
+2023-06-20 11:02:21,567 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-20 11:02:21,567 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-20 11:02:21,567 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-20 11:02:27,989 registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+2023-06-20 11:02:27,989 registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+2023-06-20 11:02:28,462 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-20 11:02:28,463 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-20 11:02:28,463 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-20 11:02:35,915 13
+2023-06-20 11:02:39,071 13
+2023-06-20 11:02:40,905 13
+2023-06-20 11:02:44,423 16
+2023-06-20 11:02:47,415 16
+2023-06-20 11:02:49,459 13
+2023-06-20 11:02:52,132 16
+2023-06-20 11:02:54,702 16
+2023-06-20 11:02:56,519 13
+2023-06-20 11:05:29,944 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-20 11:05:29,944 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-20 11:05:29,944 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-20 11:05:30,358 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-20 11:05:30,358 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-20 11:05:30,358 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-20 11:05:33,775 registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+2023-06-20 11:05:33,776 registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+2023-06-20 11:05:56,459 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-20 11:05:56,459 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-20 11:05:56,459 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-20 11:05:56,859 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-20 11:05:56,859 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-20 11:05:56,859 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-20 11:06:00,937 registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+2023-06-20 11:06:00,937 registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+2023-06-20 11:06:10,662 13
+2023-06-20 11:06:14,838 16
+2023-06-20 11:06:16,403 16
+2023-06-20 11:06:18,786 13
+2023-06-20 11:08:09,949 13
+2023-06-20 11:08:12,565 16
+2023-06-20 11:08:13,974 16
+2023-06-20 11:08:15,423 13
+2023-06-20 11:08:25,358 15
+2023-06-20 11:08:39,547 15
+2023-06-20 11:08:40,941 15
+2023-06-20 11:08:42,571 15
+2023-06-20 11:08:43,599 15
+2023-06-20 11:08:45,549 15
+2023-06-20 11:10:30,674 Exception on /editpedido [POST]
+Traceback (most recent call last):
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/var/www/html/webformFactory/helpers.py", line 31, in decorated_function
+    return f(*args, **kwargs)
+  File "/var/www/html/webformFactory/application.py", line 220, in editpedido
+    db.execute( "INSERT INTO lineaspedido (idpedido, idarticulo, descripcion, piezas, \
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/cs50/sql.py", line 29, in decorator
+    return f(*args, **kwargs)
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/cs50/sql.py", line 409, in execute
+    raise e
+RuntimeError: attempt to write a readonly database
+2023-06-20 11:10:40,534 Exception on /editpedido [POST]
+Traceback (most recent call last):
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/var/www/html/webformFactory/helpers.py", line 31, in decorated_function
+    return f(*args, **kwargs)
+  File "/var/www/html/webformFactory/application.py", line 220, in editpedido
+    db.execute( "INSERT INTO lineaspedido (idpedido, idarticulo, descripcion, piezas, \
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/cs50/sql.py", line 29, in decorator
+    return f(*args, **kwargs)
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/cs50/sql.py", line 409, in execute
+    raise e
+RuntimeError: attempt to write a readonly database
+2023-06-20 11:12:23,311 13
+2023-06-20 11:12:27,448 16
+2023-06-20 11:18:46,395 16
+2023-06-20 11:18:48,148 13
+2023-06-20 11:18:49,410 13
+2023-06-20 11:18:51,409 13
+2023-06-20 11:18:52,684 16
+2023-06-20 11:21:03,190 16
+2023-06-20 11:21:04,856 13
+2023-06-20 11:21:06,462 13
+2023-06-20 11:21:37,209 12
+2023-06-20 11:22:10,766 14

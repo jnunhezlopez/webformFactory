@@ -415,9 +415,9 @@ def detallepedidos():
             return render_template("detallepedidos.html",  registros=gclientes, pedidos=[], resumen=nombrecliente, datos=datos, columnas=columnas)
             #return apology("accion:{}, id:{}".format(accion,id))
         if accion == "detalle":#la opción de detalle también muestra el detalle de los pedidos del cliente
-            pedidos = db.execute("SELECT pedidos.id, clientes.nombrecomercial as idcliente, fchpedido, pedidos.fchprevent as fchprevent, pedidos.estado as estado\
-            , lineaspedido.descripcion as descripcion, lineaspedido.piezas as piezas FROM pedidos, clientes, lineaspedido \
-                    WHERE pedidos.idcliente = clientes.id and pedidos.id=lineaspedido.idpedido and vendedor = :vendedor and idcliente=:idcliente",
+            pedidos = db.execute("SELECT pedidos.id, clientes.nombrecomercial as idcliente, fchpedido,\
+             pedidos.fchprevent as fchprevent, pedidos.estado as estado FROM pedidos, clientes \
+                WHERE pedidos.idcliente = clientes.id and vendedor = :vendedor and idcliente=:idcliente",
                               vendedor=session["user_id"], idcliente=idcliente)
             return render_template("detallepedidos.html",  registros=gclientes, pedidos=pedidos, resumen=nombrecliente, datos=datos, columnas=columnas)
 @app.route("/cargalineaspedido", methods=["GET", "POST"])
@@ -426,7 +426,7 @@ def cargalineaspedido():
     if request.method == "POST":
         app.logger.info(request.form.get("idpedido"))
         idpedido = request.form.get("idpedido")
-        rows=db.execute ("SELECT descripcion,piezas FROM lineaspedido WHERE idpedido=:idpedido", idpedido = idpedido)
+        rows=db.execute ("SELECT id,descripcion,piezas FROM lineaspedido WHERE idpedido=:idpedido", idpedido = idpedido)
         return jsonify(rows)
     else:
         apology("No hay método GET")
