@@ -1,4 +1,4 @@
-<meta http-equiv="refresh" content="30">
+<meta http-equiv="refresh" content="30" xmlns="http://www.w3.org/1999/html">
 {% extends "layout.html" %}
 
 {% block title %}
@@ -29,6 +29,28 @@
     {% if registros!=[] %}
     <br/>
     <form action="{{ url_for('index') }}" method="post">
+
+    <!-- <script>
+        const ctx=document.getElementById('myChart');
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels:['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script> -->
     <table>
         <tr><th>NºPedido</th><th>Cliente</th><th>Fecha</th><th>Fecha ent.</th><th>Estado</th><th></th><th></th><th></th></tr>
         {% for registro in registros %}
@@ -54,6 +76,9 @@
         {% endfor %}
     </table>
     </form>
+    <!-- <div>
+        <canvas id="myChart"</canvas>
+    </div> -->
     {% endif %}
     {% if resumen!=[] %} <!--de momento el resumen hace lo mismo que sin resumen-->
     <br/>

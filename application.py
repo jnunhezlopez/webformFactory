@@ -14,7 +14,7 @@ import os
 # configure application
 app = Flask(__name__)
 app.config['SQLALCHEMY_ECHO']=True
-os.chdir('/var/www/html/webforms/')
+os.chdir('/var/www/html/webformFactory/')
 # ensure responses aren't cached
 if app.config["DEBUG"]:
     @app.after_request
@@ -50,8 +50,10 @@ def index():
         fechas = []
         for i in (1,2):
             fechas.append(date.today().strftime(formato))
+        #se seleccionan los pedidos pendientes del vendedor que haya iniciado sesión
+        #los pedidos pendientes son los que están en estado <3, 3 el pedido servido
         rows = db.execute("SELECT pedidos.id, clientes.nombrecomercial as idcliente, fchpedido, fchprevent, estado FROM pedidos, clientes\
-        WHERE pedidos.idcliente = clientes.id and vendedor = :vendedor", vendedor=session["user_id"] )
+        WHERE pedidos.idcliente = clientes.id and vendedor = :vendedor AND estado <3", vendedor=session["user_id"] )
         return render_template("index.html", registros = rows, resumen = [], periodo = fechas)
     if request.method == "POST":
         accion = request.form.get("action")[0]
@@ -63,7 +65,7 @@ def index():
             db.execute (sql)
             return redirect(url_for("index"))
         if accion == "c":
-            sql = "UPDATE pedidos SET estado = 2 WHERE id=" + id
+            sql = "UPDATE pedidos SET estado = 2 WHERE estado = 1 AND id=" + id
             db.execute(sql)
             return redirect(url_for("index"))
         if accion == "m":
@@ -336,8 +338,16 @@ def cliente():
 @app.route("/articulos", methods=["GET", "POST"])
 @login_required
 def articulos():
-    articulos = db.execute("SELECT * FROM articulos")
-    return render_template("articulos.html",registros=articulos)
+    if request.method == "GET":
+        articulos = db.execute("SELECT * FROM articulos WHERE estado = 1")
+        return render_template("articulos.html",registros=articulos)
+    else:
+        accion = request.form.get("action")[0]
+        id = request.form.get("action")[1:]
+        if accion == "e":
+            sql = "UPDATE articulos SET estado = 2 WHERE id= " + id
+            db.execute(sql)
+            return redirect(url_for("articulos"))
 @app.route("/cargapaquetes", methods=["GET", "POST"])
 def cargapaquetes():
     if request.method == "GET":
@@ -373,5 +383,42 @@ def creapedido():
     else:
         rows={"message": "caracoles", "severity": "danger"}
         return jsonify(rows)
+
+@app.route("/detallepedidos", methods=["GET", "POST"])
+@login_required
+def detallepedidos():
+    if request.method == "GET":
+        lineasResumen = db.execute("SELECT descripcion as columna, sum(piezas) as datos FROM lineaspedido GROUP BY descripcion")
+        columnas = []
+        datos = []
+        for linea in lineasResumen:
+            columnas.append(linea["columna"])
+            datos.append(linea["datos"])
+        return render_template("detallepedidos.html",  registros=gclientes, resumen="varios", datos=datos, columnas=columnas)
+    if request.method == "POST":
+        accion = request.form.get("action")
+        idcliente = request.form.get("idcliente")
+        cliente = next(item for item in gclientes if item["id"] == int(idcliente))
+        nombrecliente = cliente["nombrecomercial"]
+        lineasResumen = db.execute(
+            "SELECT descripcion as columna, sum(piezas) as datos FROM lineaspedido,pedidos WHERE \
+             lineaspedido.idpedido = pedidos.id AND pedidos.idcliente= :idcliente GROUP BY descripcion" \
+            , idcliente=idcliente)
+        columnas = []
+        datos = []
+        # app.logger.info(type(idcliente))
+        for linea in lineasResumen:
+            columnas.append(linea["columna"])
+            datos.append(linea["datos"])
+        if accion == "cargar":#si se selecciona cargar se muestra el gráfico de los artículos pedidos por el cliente
+            #seleccionado
+            return render_template("detallepedidos.html",  registros=gclientes, pedidos=[], resumen=nombrecliente, datos=datos, columnas=columnas)
+            #return apology("accion:{}, id:{}".format(accion,id))
+        if accion == "detalle":#la opción de detalle también muestra el detalle de los pedidos del cliente
+            pedidos = db.execute("SELECT pedidos.id, clientes.nombrecomercial as idcliente, fchpedido, pedidos.fchprevent as fchprevent, pedidos.estado as estado\
+            , lineaspedido.descripcion as descripcion, lineaspedido.piezas as piezas FROM pedidos, clientes, lineaspedido \
+                    WHERE pedidos.idcliente = clientes.id and pedidos.id=lineaspedido.idpedido and vendedor = :vendedor and idcliente=:idcliente",
+                              vendedor=session["user_id"], idcliente=idcliente)
+            return render_template("detallepedidos.html",  registros=gclientes, pedidos=pedidos, resumen=nombrecliente, datos=datos, columnas=columnas)
 if __name__ ==  '__main__':
     app.run()

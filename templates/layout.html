@@ -10,16 +10,18 @@
 
         <!-- documentation at http://getbootstrap.com/, alternative themes at https://www.bootstrapcdn.com/bootswatch/ -->
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
-
+<!--        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous"> -->
         <link href="{{ url_for('static', filename='styles.css') }}" rel="stylesheet"/>
         <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png">
 
         <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+<!--        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>  -->
         <!-- http://1000hz.github.io/bootstrap-validator/ -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js"></script>
-		
+		<!-- script para representación de gráficos 18/06/23 no funcionó en el primer intento
+		al día siguiente ya funcionó, había errores de sintaxis tontos-->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <!--<link rel="stylesheet" href="/resources/demos/style.css"> -->
         <!--INSERTADO POR JAVIER: OTROS ESTILOS SACADOS DE INTERNET-->
@@ -73,6 +75,7 @@
                                     <span class="caret"></span></a>
                                     <ul class="dropdown-menu">
                                         <li><a href="{{ url_for('articulos') }}">Consulta artículos</a></li>
+                                        <li><a href="{{ url_for('detallepedidos') }}">Consulta pedidos</a></li>
 <!--                                        <li><a href="{{ url_for('consultapaquetes') }}">Consulta paquetes</a></li>-->
                                     </ul>
                                 </li>
@@ -106,6 +109,18 @@
             </main>
 
         </div>
+    <footer>
+
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="{{ url_for('index') }}"><span class="blue">C</span><span class="red">y</span><span class="yellow">2</span><span class="green">3</span> <span class="red">Cyber22-23</span> Casiano Automatics. Todos los derechos reservados.</a>
+                    </div>
+
+        </div>
+        </nav>
+
+    </footer>
 
     </body>
 

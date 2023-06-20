@@ -1,0 +1,134 @@
+<!-- <meta http-equiv="refresh" content="30" xmlns="http://www.w3.org/1999/html"> -->
+{% extends "layout.html" %}
+
+{% block title %}
+    registros
+{% endblock %}
+
+{% block main %}
+    <style>
+    table {
+        border: 2px solid black;
+    }
+    th {
+        padding: 15px;
+        border: 2px solid black;
+    }
+    td {
+        padding: 15px;
+        border: 1px solid black;
+    }
+    </style>
+    {% if datos!=[] or resumen!=[] %}
+    <panel>
+         <label>Datos de pedidos servidos</label>
+    </panel> 
+    {% else %}
+        <label class="text-warning"><h1>No hay datos de pedidos servidos</h1></label>
+    {% endif %}
+
+    <br/>
+<div class="container">
+    <div class = "row">
+        <form action="{{ url_for('detallepedidos') }}" method="post">
+            <div class="form-group">
+                <!--<input autocomplete="off" autofocus class="form-control" id="idcliente" name="idcliente" placeholder="Id de cliente:" required type="text"/>-->
+                <select class="form-control" id="idcliente" name="idcliente">
+                    {% for registro in registros %}
+                    <option value="{{registro.id}}">{{registro.nombrecomercial}}</option>
+                    {% endfor %}
+                </select>
+                <input class="form-control" id="fchpedido" name="fchpedido" placeholder="De fecha de pedido" type="text"/>
+                <input class="form-control" id="fchpedido2" name="fchpedido2" placeholder="A fecha " type="text"/>
+                <div class="help-block with-errors"></div>
+            </div>
+            <div class="form-group">
+                <input class="form-control" name="estado" value="1" placeholder="Estado: " type="hidden"/>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-default" type="submit" name="action" value="cargar">Cargar Datos</button>
+                <button class="btn btn-default" type="submit" name="action" value="detalle">Ver detalle</button>
+                <!--<button class="btn btn-default" type="submit" name="action" value="modificar">Añadir Línea</button>-->
+            </div>
+        </form>
+    </div>
+    <div class = "row">
+        <div class = "col-md-6">
+            <canvas id="myChart"></canvas>
+        </div>
+        <div class = "col-md-6">
+            {% if pedidos!=[] %}
+            <table class="table table-condensed table-striped">
+                <thead>
+                    <tr><th></th></th><th>NºPedido</th><th>Cliente</th><th>Fecha</th><th>Fecha ent.</th><th>Estado</th><th>Descripción</th><th>Pz</th></tr>
+                </thead>
+                <tbody>
+<!--                    {% set nuevopedido= 0 %}-->
+                    {% for pedido in pedidos %}
+<!--                        {% if pedido.id != nuevopedido %}-->
+                        <tr data-toggle="collapse" data-target="#{{pedido.id}}" class="accordion-toggle">
+<!--                            <td><button class="btn btn-default btn-xs"><span class="glyphicon glyphicon-plus"></span></button></td>-->
+                            <td></td>
+                            <td>{{pedido.id}}</td><td>{{pedido.idcliente}}</td>
+                            <td>{{pedido.fchpedido}}</td>
+                            <td>{{pedido.fchprevent}}</td>
+                            <td>{{pedido.estado}}</td>
+                            <td>{{pedido.descripcion}}</td>
+                            <td>{{pedido.piezas}}</td>
+                        </tr>
+<!--                        {% set nuevopedido = pedido.id %}-->
+<!--                        {% endif %}-->
+  <!--                      <tr>
+                            <td colspan="12" class = "hiddenRow">
+                                <div class="accordian-body collapse" id="{{pedido.id}}">
+                                    <table class = "table table-striped">
+                                        <thead>
+                                        <tr class="info">
+                                            <th>Descripción</th><th>Piezas</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <tr>
+                                            <td>{{pedido.descripcion}}</td>
+                                            <td>{{pedido.piezas}}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </td>
+                        </tr>-->
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <script>
+        const ctx=document.getElementById('myChart');
+        var data_js = {{ datos|tojson }};
+  //alert (data_js);
+        var col_js = {{ columnas|tojson }};
+        var label_js = {{ resumen|tojson }}
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: col_js,//['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: label_js,//'# de ventas',
+                    data: data_js,//[12, 19, 3, 5, 2, 3],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+{% endblock %}
