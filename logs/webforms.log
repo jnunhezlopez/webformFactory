@@ -6605,3 +6605,90 @@ RuntimeError: attempt to write a readonly database
 2023-06-20 11:21:06,462 13
 2023-06-20 11:21:37,209 12
 2023-06-20 11:22:10,766 14
+2023-06-20 11:33:48,309 13
+2023-06-20 11:33:49,908 16
+2023-06-20 11:34:11,940 13
+2023-06-20 11:34:17,419 13
+2023-06-20 11:34:18,096 13
+2023-06-20 11:34:27,143 13
+2023-06-21 11:28:18,027 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-21 11:28:18,027 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-21 11:28:18,027 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-21 11:28:18,566 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-21 11:28:18,566 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-21 11:28:18,566 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-21 11:28:23,558 registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+2023-06-21 11:28:23,558 registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+2023-06-21 11:28:31,016 13
+2023-06-21 11:28:31,259 13
+2023-06-21 11:28:32,089 13
+2023-06-21 11:28:32,286 13
+2023-06-21 11:28:32,866 16
+2023-06-21 11:28:33,094 16
+2023-06-21 11:33:51,666 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-21 11:33:51,666 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-21 11:33:51,666 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-21 11:33:52,141 loaded lazy attr 'SafeConfigParser': <class 'configparser.ConfigParser'>
+2023-06-21 11:33:52,141 loaded lazy attr 'NativeStringIO': <class '_io.StringIO'>
+2023-06-21 11:33:52,142 loaded lazy attr 'BytesIO': <class '_io.BytesIO'>
+2023-06-21 11:33:59,141 registered 'sha512_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha512_crypt'>
+2023-06-21 11:33:59,141 registered 'sha256_crypt' handler: <class 'passlib.handlers.sha2_crypt.sha256_crypt'>
+2023-06-21 11:35:17,585 12
+2023-06-21 11:35:20,462 12
+2023-06-21 11:35:54,833 Exception on /pedido [POST]
+Traceback (most recent call last):
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/var/www/html/webformFactory/helpers.py", line 31, in decorated_function
+    return f(*args, **kwargs)
+  File "/var/www/html/webformFactory/application.py", line 194, in pedido
+    id = db.execute (sql)
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/cs50/sql.py", line 29, in decorator
+    return f(*args, **kwargs)
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/cs50/sql.py", line 409, in execute
+    raise e
+RuntimeError: attempt to write a readonly database
+2023-06-21 11:37:10,213 Exception on /pedido [POST]
+Traceback (most recent call last):
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/var/www/html/webformFactory/helpers.py", line 31, in decorated_function
+    return f(*args, **kwargs)
+  File "/var/www/html/webformFactory/application.py", line 194, in pedido
+    id = db.execute (sql)
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/cs50/sql.py", line 29, in decorator
+    return f(*args, **kwargs)
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/cs50/sql.py", line 409, in execute
+    raise e
+RuntimeError: attempt to write a readonly database
+2023-06-21 11:44:10,328 Exception on /pedido [POST]
+Traceback (most recent call last):
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/flask/app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/var/www/html/webformFactory/helpers.py", line 31, in decorated_function
+    return f(*args, **kwargs)
+  File "/var/www/html/webformFactory/application.py", line 194, in pedido
+    id = db.execute (sql)
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/cs50/sql.py", line 29, in decorator
+    return f(*args, **kwargs)
+  File "/var/www/html/flask-app/venv/lib/python3.10/site-packages/cs50/sql.py", line 409, in execute
+    raise e
+RuntimeError: attempt to write a readonly database

@@ -160,4 +160,16 @@
             });
         });
     </script>
+<script>
+    $( function() {
+        $( "#fchpedido" ).datepicker({
+            firstDay: 1,
+            dateFormat: "dd/mm/yy",
+        }).datepicker("setDate", 'now');
+        $( "#fchpedido2" ).datepicker({
+            firstDay: 1,
+            dateFormat: "dd/mm/yy"
+        });
+    } );
+</script>
 {% endblock %}
